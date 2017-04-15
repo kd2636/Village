@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="container fadeInDown animated">
+		<div class="row" style="margin-top:20px"> 
+			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+				<div class="panel-body">
+					<form method="post" action="{{ url_for('register') }}" data-toggle="validator" id="registration" role="form">
+						<fieldset>
+							<h1>Register</h1>
+							<br>
+						
+						<div class="form-group">
+							<label class="control-label" for="signupName">Name</label>
+							<input required id="signupName" type="text" maxlength="50" class="form-control input-lg" name="name">
+							<div class="help-block with-errors"></div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="signupName">Usename</label>
+							<input id="signupName" required type="text" maxlength="50" class="form-control input-lg" name="username">
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="phone">Phone Number</label>
+							<input id="phone" type="text" maxlength="10" class="form-control input-lg" name="phone">
+							<div class="help-block with-errors"></div>
+						</div>
+					
+
+
+		                <div class="form-group">
+						<label class="control-label" for="location">Region</label>
+                    
+                        <select required name="region" class="form-control input-lg" required placeholder="Region">
+                            <option value=""></option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Faizabad">Faizabad</option>
+                            <option value="Bareilly">Bareilly</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Gorakhpur">Gorakhpur</option>
+                            <option value="Faridabad">Faridabad</option>
+                            <option value="Pilibhit">Pilibhit</option>
+                            <option value="Rampur">Rampur</option>
+                            <option value="Ajmer">Ajmer</option>
+                            <option value="Muradabad">Muradabad</option>
+                            <option value="Kanpur">Kanpur</option></option>
+                            <option value="Basti">Basti</option>
+                        </select>
+                        </div>
+						
+						<div class="form-group">
+							<label class="control-label" for="password">Password</label>
+							<input id="password" type="password" maxlength="25" data-minlength="6" class="form-control input-lg" name="passo" placeholder="at least 6 characters" length="40">
+							<div class="help-block with-errors"></div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="confirmation">Password again</label>
+							<input id="confirmation" type="password" data-match="#password" data-match-error="passwords don't match" required maxlength="25" name="passv" class="input-lg form-control">
+							<div class="help-block with-errors"></div>					
+						</div>
+						
+						<div class="form-group">
+							<button id="signupSubmit" type="submit" class="btn btn-info btn-block">Register</button>
+						</div>
+						<p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
+						<hr>
+						<p></p>Already have an account? <a href="{{ url_for('login') }}">Sign in</a></p>
+					</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

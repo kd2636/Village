@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Available
+{% endblock %}
+
+{% block main %}
+<h2>Availabilty for {{item}} in {{ session.region }} region -</h2>
+    {% if rows != None %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Quantity(Kg)</th>
+                <th>Price</th>
+                <th>Seller Name</th>
+                <th>Seller Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row.qty }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.phone }}</td>
+                </tr>
+        
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    
+    {% else %}
+    <h3>No listing right now</h3>
+    <script>swal("No listing right now", "Come back later!");</script>
+    {% endif %}
+{% endblock %}

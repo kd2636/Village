@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main%}
+    <div class="intro-header2 rollIn animated">
+		<form action="{{ url_for('sell') }}" method="post" >
+		    <div>
+			    <div class="col-sm-2">				
+                    <label class="control-label" for="item">Product</label>
+                    <select name="item" class="form-control" required>
+                        <option value=""></option>
+                        <option value="Onion">Onion</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Peas">Peas</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Bajra">Bajra</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Sugercane">Sugercane</option>
+                        <option value="Mustard">Mustard</option>
+                        <option value="Molasses">Molasses</option>
+                        <option value="Rajma">Rajma</option>
+                        <option value="Jute">Jute</option>
+                    </select>
+                </div>
+                    
+						<div class="col-sm-2">
+							<label class="control-label" for="quantity">Quantity(in kg)</label>
+							<input id="quantity" type="number" name="qty" maxlength="50" class="form-control">
+						</div>
+						
+						<div class="col-sm-2">
+							<label class="control-label" for="price">Price(/unit)</label>
+							<input id="price" type="text" name="price" maxlength="50" class="form-control">
+						</div>
+						<br>
+						
+						
+				</div>
+				
+				<div class="col-sm-2">
+				    <button type="submit" class="btn  btn-primary">Upload</button>
+				</div>
+						
+						
+				</form>		
+			</div>
+{% endblock %}

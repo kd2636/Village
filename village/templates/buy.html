@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <div class="intro-header3 text-center fadeInDown animated">
+		<form action="{{ url_for('buy') }}" method="post" >
+		    <fieldset>
+			    <div class="form-group" style="display: inline-block; width: auto;">				
+                    <label class="" for="item" style="font-size: 18px;">Product</label>
+                    <select name="item" class="form-control" required>
+                        <option value=""></option>
+                        <option value="Onion">Onion</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Peas">Peas</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Bajra">Bajra</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Sugercane">Sugercane</option>
+                        <option value="Mustard">Mustard</option>
+                        <option value="Molasses">Molasses</option>
+                        <option value="Rajma">Rajma</option>
+                        <option value="Jute">Jute</option>
+                    </select>
+                
+                    
+				</div>
+				<div class="form-group" style="display: inline-block; width: auto;">
+				    <button type="submit" class="btn btn-primary">Check</button>
+				</div>
+						
+			</fieldset>			
+		</form>		
+	</div>
+{% endblock %}
